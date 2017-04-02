@@ -3,12 +3,11 @@ import ReactDOM from 'react-dom';
 import Button from './Button';
 import Header from './Header';
 
-/*
+let header = document.getElementById('header');
 ReactDOM.render(
-  <Header countryList={myDemo.countryList} />,
-  document.getElementById('header')
+  <Header {...(header.dataset)} />,
+  header
 );
-*/
 
 ReactDOM.render(
   <Button />,

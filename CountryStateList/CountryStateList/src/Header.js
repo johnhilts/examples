@@ -4,7 +4,8 @@ import PubSub from 'pubsub-js';
 class Header extends Component {
   constructor(props) {
     super(props);
-    this.state = {headerCounter: 0, countryList: props.countryList, };
+    this.state = {headerCounter: 0, countryList: JSON.parse(props.countryList), };
+    // this.state = {headerCounter: 0, countryList: [{name: 'test', }], htmlData: JSON.parse(props.countryList), };
   }
 
   componentDidMount() {
@@ -30,7 +31,7 @@ class Header extends Component {
         <div>
           The country list:<br />
           <ul>
-            {this.state.countryList.map(x=><li>x.name</li>)}
+            {this.state.countryList.map(x=><li>{x.name}</li>)}
           </ul>
         </div>
       </div>
