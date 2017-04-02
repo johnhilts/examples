@@ -16,11 +16,11 @@
     <title>ReactJS pub/sub with .NET demo</title>
   </head>
   <body>
-    <div id="header">
-      Loading header ...
+    <div id="states">
+      Loading states ...
     </div>
-    <div id="main">
-      Loading main ...
+    <div id="countries">
+      Loading countries ...
     </div>
     <!--
       This HTML file is a template.
@@ -34,8 +34,12 @@
     -->
     <script src='myDemo.js' type='text/javascript'></script>
     <script>
-      myDemo.countryList = [{'name': 'United States of America', 'id': 1,}, {'name': 'Canada', 'id': 2,}];
-      document.getElementById('header').dataset.countryList = JSON.stringify(myDemo.countryList);
+      myDemo.countryList = [{'name': 'USA', 'value': 'US',}, {'name': 'Canada', 'value': 'CA',}];
+      myDemo.stateList = [{'name': 'California', 'value': 'CA',}, {'name': 'Nevada', 'value': 'NV',}];
+      document.getElementById('states').dataset.stateList = JSON.stringify(myDemo.stateList);
+      document.getElementById('states').dataset.selectedCountry = 'US';
+      document.getElementById('countries').dataset.countryList = JSON.stringify(myDemo.countryList);
+      document.getElementById('countries').dataset.selectedCountry = 'US';
     </script>
   </body>
 </html>
