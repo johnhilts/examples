@@ -1,0 +1,37 @@
+﻿@model CountryStateList.Models.JurisdictionModel
+
+@{
+    ViewBag.Title = "ReactJS pub/sub with .NET demo";
+}
+
+<div id="states">
+    Loading states ...
+</div>
+<div id="countries">
+    Loading countries ...
+</div>
+
+@section scripts 
+{
+<script src='js/myDemo.js' type='text/javascript'></script>
+<script>
+    @{
+        var jsonCountryList = new System.Text.StringBuilder();
+        Model.CountryList.ForEach(x =>
+        {
+            jsonCountryList.AppendFormat("{{'name': '{0}', 'value': '{1}',}}, ", x.Name, x.Id);
+        });
+        var jsonStateList = new System.Text.StringBuilder();
+        Model.StateList.ForEach(x =>
+        {
+            jsonStateList.AppendFormat("{{'name': '{0}', 'value': '{1}',}}, ", x.Name, x.Id);
+        });
+    }
+      myDemo.countryList = [@(Html.Raw(jsonCountryList.ToString()))];
+      myDemo.stateList = [@(Html.Raw(jsonStateList.ToString()))];
+      document.getElementById('states').dataset.stateList = JSON.stringify(myDemo.stateList);
+      document.getElementById('states').dataset.selectedCountry = '@(Model.SelectedCountryId)';
+      document.getElementById('countries').dataset.countryList = JSON.stringify(myDemo.countryList);
+      document.getElementById('countries').dataset.selectedCountry = '@(Model.SelectedCountryId)';
+</script>
+}

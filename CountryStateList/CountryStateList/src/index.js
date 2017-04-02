@@ -1,13 +1,16 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Button from './Button';
-import Header from './Header';
+import CountrySelect from './CountrySelect';
+import StateSelect from './StateSelect';
 
+let states = document.getElementById('states');
 ReactDOM.render(
-  <Header />,
-  document.getElementById('header')
+  <StateSelect {...(states.dataset)} />,
+  states
 );
+
+let countries = document.getElementById('countries');
 ReactDOM.render(
-  <Button />,
-  document.getElementById('main')
+  <CountrySelect {...(countries.dataset)} />,
+  countries
 );
