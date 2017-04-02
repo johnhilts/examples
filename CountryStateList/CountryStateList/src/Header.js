@@ -4,7 +4,7 @@ import PubSub from 'pubsub-js';
 class Header extends Component {
   constructor(props) {
     super(props);
-    this.state = {headerCounter: 0};
+    this.state = {headerCounter: 0, countryList: props.countryList, };
   }
 
   componentDidMount() {
@@ -27,6 +27,12 @@ class Header extends Component {
       <div style={{borderWidth: 2, borderColor: 'black', borderStyle: 'solid', width: '50pc', paddingTop: '10px', paddingLeft: '10px', paddingRight: '10px', paddingBottom: '10px', marginBottom: '10px', }}>
         <div>this section inside the header component</div>
         <div>Counter: {this.state.headerCounter}</div>
+        <div>
+          The country list:<br />
+          <ul>
+            {this.state.countryList.map(x=><li>x.name</li>)}
+          </ul>
+        </div>
       </div>
     );
   }
