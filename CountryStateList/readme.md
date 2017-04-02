@@ -1,3 +1,4 @@
+```html
 <form>
 <select>
 <option value='CA'>California</option>
@@ -9,12 +10,15 @@
 <option value='US'>United States</option>
 </select>
 </form>
+```
 
 Actual HTML:
+```html
 <form>
 <StateList />
 <CountryList />
 </form>
+```
 
 Country List should be init'd on page load ... data will be passed in, but the data will be brought in by the server
 
