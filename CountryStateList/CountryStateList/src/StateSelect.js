@@ -18,6 +18,7 @@ class StateSelect extends Component {
   subscriber(msg, data) {
     console.log(`logging msg in subscriber: ${msg}`);
     console.log(`logging data in subscriber: ${data}`);
+    // make ajax call here to get updated list of states, based on country ; use http://127.0.0.10/api/jurisdiction/states/us
     this.setState({selectedCountry: data,})
   }
 
