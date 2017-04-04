@@ -1,13 +1,14 @@
 ### Integrating reactjs components with asp.net mvc (4.6.2)
 
 **Tools and technologies used**
+
 VS 2017 (asp.net)
 - asp.net mvc website template with web api
 
 atom (reactjs)
 - create-react-app
 
-additional dependencies:
+additional JS dependencies:
 - pubsubjs
 - axios
 
