@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import PubSub from 'pubsub-js';
+import axios from 'axios';
 
 class StateSelect extends Component {
   constructor(props) {
@@ -18,8 +19,14 @@ class StateSelect extends Component {
   subscriber(msg, data) {
     console.log(`logging msg in subscriber: ${msg}`);
     console.log(`logging data in subscriber: ${data}`);
-    // make ajax call here to get updated list of states, based on country ; use http://127.0.0.10/api/jurisdiction/states/us
-    this.setState({selectedCountry: data,})
+    let selectedCountry = data;
+    axios.get(`http://127.0.0.10/api/jurisdiction/states/${selectedCountry}`)
+      .then((response) => this.setState({selectedCountry: selectedCountry, stateList: response.data.map(this.mapStates)}))
+  }
+
+  // mapping from server properties to client properties
+  mapStates(state) {
+    return {value: state.Id, name: state.Name, }
   }
 
   render() {
