@@ -34,7 +34,7 @@ In this example, I created 2 components - a state dropdown and country dropdown.
 ```javascript
 var countries = document.getElementById('countries');
 countries.dataset.countryList = 
-  JSON.stringify([{'name': 'USA', 'value': 'US'}, {'name': 'Canada', 'value': 'CA'});
+  JSON.stringify([{'name': 'USA', 'value': 'US'}, {'name': 'Canada', 'value': 'CA'}]);
 ```
 Put the react CountryList component in the countries div:
 ```javascript
@@ -53,6 +53,7 @@ class CountrySelect extends Component {
   }
 ```
 2. Communicate between 2 independent components
+
 If you have components that aren't siblings, or nested, then getting information sent between them requires something like redux, mobx, or some other kind of observer pattern implementation. pubsubjs actually makes it very easy to set up simple Pub/Sub.
 To subscribe:
 ```javascript
