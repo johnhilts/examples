@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import PubSub from 'pubsub-js';
 import axios from 'axios';
+import {config} from './config';
+import {constants} from './constants';
 
 class StateSelect extends Component {
   constructor(props) {
@@ -9,7 +11,7 @@ class StateSelect extends Component {
   }
 
   componentDidMount() {
-    this.token = PubSub.subscribe('SELECTED-COUNTRY', this.subscriber.bind(this))
+    this.token = PubSub.subscribe(constants.selected_country_topic, this.subscriber.bind(this))
   }
 
   componentWillUnmount() {
@@ -17,11 +19,11 @@ class StateSelect extends Component {
   }
 
   subscriber(msg, data) {
-    console.log(`logging msg in subscriber: ${msg}`);
-    console.log(`logging data in subscriber: ${data}`);
-    let selectedCountry = data;
-    axios.get(`http://127.0.0.10/api/jurisdiction/states/${selectedCountry}`)
-      .then((response) => this.setState({selectedCountry: selectedCountry, stateList: response.data.map(this.mapStates)}))
+    if (msg === constants.selected_country_topic) {
+      let selectedCountry = data;
+      axios.get(`${config.apiDomain}/api/jurisdiction/states/${selectedCountry}`)
+        .then((response) => this.setState({selectedCountry: selectedCountry, stateList: response.data.map(this.mapStates)}))
+    }
   }
 
   // mapping from server properties to client properties
@@ -33,7 +35,7 @@ class StateSelect extends Component {
     return (
       <select>
         <option value=''>Please select state/province</option>
-        {this.state.stateList.map(x=><option key={`${this.state.selectedCountry}-${x.value}`} value={x.value}>{x.name}</option>)}
+        {this.state.stateList.map(x => <option key={`${this.state.selectedCountry}-${x.value}`} value={x.value}>{x.name}</option>)}
       </select>
     );
   }

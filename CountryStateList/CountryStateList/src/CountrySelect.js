@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import PubSub from 'pubsub-js';
+import {constants} from './constants';
 
 class CountrySelect extends Component {
   constructor(props) {
@@ -15,12 +16,12 @@ class CountrySelect extends Component {
   }
 
   notifyCountrySelectionChange(selectedCountry) {
-    PubSub.publish('SELECTED-COUNTRY', selectedCountry)
+    PubSub.publish(constants.selected_country_topic, selectedCountry)
   }
 
   render() {
     return (
-      <select onChange={this.countryChangeHandler.bind(this)}>
+      <select onChange={this.countryChangeHandler.bind(this)} defaultValue={this.state.selectedCountry}>
         {this.state.countryList.map(x => <option key={x.value} value={x.value}>{x.name}</option>)}
       </select>
     );

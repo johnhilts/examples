@@ -1,9 +1,5 @@
 ﻿using CountryStateList.Models;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Net;
-using System.Net.Http;
 using System.Web.Http;
 
 namespace CountryStateList
@@ -18,9 +14,23 @@ namespace CountryStateList
             {
                 case "US":
                 default:
-                    return new List<StateModel> { new StateModel { Name = "California", Id = "CA", }, new StateModel { Name = "Nevada", Id = "NV", }, };
+                    return new List<StateModel>
+                        {
+                            new StateModel { Name = "California", Id = "CA", },
+                            new StateModel { Name = "Nevada", Id = "NV", },
+                        };
                 case "CA":
-                    return new List<StateModel> { new StateModel { Name = "British Columbia", Id = "BC", }, new StateModel { Name = "Alberta", Id = "AB", }, };
+                    return new List<StateModel>
+                        {
+                            new StateModel { Name = "British Columbia", Id = "BC", },
+                            new StateModel { Name = "Alberta", Id = "AB", },
+                        };
+                case "MX":
+                    return new List<StateModel>
+                        {
+                            new StateModel { Name = "Chihuahua", Id = "CH", },
+                            new StateModel { Name = "Jalisco", Id = "JA", },
+                        };
             }
         }
     }

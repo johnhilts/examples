@@ -1,8 +1,5 @@
 ﻿using CountryStateList.Models;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 using System.Web.Mvc;
 
 namespace CountryStateList.Controllers
@@ -16,8 +13,18 @@ namespace CountryStateList.Controllers
 
         private JurisdictionModel GetDefaultModel()
         {
-            var countryList = new List<CountryModel> { new CountryModel { Name = "USA", Id = "US", }, new CountryModel { Name = "Canada", Id = "CA", }, };
-            var stateList = new List<StateModel> { new StateModel { Name = "California", Id = "CA", }, new StateModel { Name = "Nevada", Id = "NV", }, };
+            var countryList = new List<CountryModel>
+            {
+                new CountryModel { Name = "Canada", Id = "CA", },
+                new CountryModel { Name = "USA", Id = "US", },
+                new CountryModel { Name = "Mexico", Id = "MX", },
+            };
+
+            var stateList = new List<StateModel>
+            {
+                new StateModel { Name = "California", Id = "CA", },
+                new StateModel { Name = "Nevada", Id = "NV", },
+            };
 
             return new JurisdictionModel { SelectedCountryId = "US", CountryList = countryList, StateList = stateList, };
         }
