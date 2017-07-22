@@ -23,17 +23,48 @@ describe('consecutive', () => {
 		});
 	});
 
-	it('get consecutively concatenated strings', () => {
-		let indexes = [
-			{
-				arr : ["zone", "abigail", "theta", "form", "libe", "zas", "theta", "abigail"],
-				expected : ["zoneabigail", "abigailtheta", "thetaform", "formlibe", "libezas", "zastheta", "thetaabigail"],
-				consecutiveCount : 2,
-				indexCount: 8
-			}
-		];
-		let actual = consecutive.getConsecutiveStringsByLength(indexes[0]);
-		expect(actual).to.eql(indexes[0].expected);
+	let testArrays = [
+		{
+			arr : ["zone", "abigail", "theta", "form", "libe", "zas", "theta", "abigail"],
+			expected : ["zoneabigail", "abigailtheta", "thetaform", "formlibe", "libezas", "zastheta", "thetaabigail"],
+			consecutiveCount : 2,
+			indexCount: 8
+		},
+		{
+			arr : ["zone", "abigail", "theta", "form", "libe", "zas", "theta", "abigail", "zone"],
+			expected : ["zoneabigailtheta", "abigailthetaform", "thetaformlibe", "formlibezas", "libezastheta", "zasthetaabigail", "thetaabigailzone"],
+			consecutiveCount : 3,
+			indexCount: 9
+		}
+	];
+
+	testArrays.forEach(function(test) {
+		it('get consecutively concatenated strings', () => {
+			let actual = consecutive.getConsecutiveStringsByLength(test);
+			expect(actual).to.eql(test.expected);
+		});
+	});
+
+	let testCases = [
+		{
+			arr : ["zone", "abigail", "theta", "form", "libe", "zas", "theta", "abigail"],
+			expected :  "abigailtheta",
+			consecutiveCount : 2,
+			testCaseId: 1,
+		},
+		{
+			arr : ["zone", "abigail", "theta", "form", "libe", "zas", "theta", "abigail", "zone"],
+			expected : "zoneabigailtheta",
+			consecutiveCount : 3,
+			testCaseId: 2,
+		}
+	];
+
+	testCases.forEach(function(test) {
+		it(`get first occurrence of the longest consecutively concatenated string # ${test.testCaseId}`, () => {
+			let actual = consecutive.longestConsec(test.arr, test.consecutiveCount);
+			expect(actual).to.eql(test.expected);
+		});
 	});
 
 });

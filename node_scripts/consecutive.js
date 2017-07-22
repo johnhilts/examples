@@ -1,33 +1,30 @@
 export const getRange = (n) => [...Array(n).keys()];
 
+
 export const longestConsec = (strarr, k) => {
+	const buildConsecutiveLengths = (el) => {
+		return {str: el, len: el.length};
+	}
+
+	const getLengths = (el) => el.len
+
+	const maxLengths = (el) => el.len === max
+
 	let n = strarr.length;
-
-	const getOffset = (k) => [...Array(Math.floor(strarr.length / k)).keys()];
-	let offset = getOffset(k);
-	const eachN = (el, ix) => {
-		 return {start: 0+ix*k, end: (k-1)+ix*k};
-	}
-	var ranges = offset.map(eachN);
-
-	/*
-	const consecutiveN = (el, ix) => {
-		return ix >= range.start && ix <= range.end;
-	}
-	*/
-
-	let filtered = ranges.map(range => {
-		return strarr.filter((el, ix) => ix >= range.start && ix <= range.end); // consecutiveN
-	});
-
-	console.log(filtered);
+	let info = {arr: strarr, consecutiveCount: k, indexCount: n};
+	let consecutiveStrings = getConsecutiveStringsByLength(info);
+	let consecutiveLengths = consecutiveStrings.map(buildConsecutiveLengths);
+	let max = Math.max(...consecutiveLengths.map(getLengths));
+	let filtered = consecutiveLengths.filter(maxLengths);
+	return filtered[0].str; // hopefully everything stays sorted the same way ...
 }
-longestConsec(["zone", "abigail", "theta", "form", "libe", "zas", "theta", "abigail"], 2);
 
 export const getConsecutiveStringsByLength = (indexes) => {
+	const concatenate = (acc, el) => acc + el
+
 	let indexesToConcatenate = getIndexesToConcatenate(indexes);
 	let matched = indexesToConcatenate.map(index => index.map(el => indexes.arr[el]));
-	let concatenated = matched.map(x => x.reduce((acc, el) => acc + el));
+	let concatenated = matched.map(x => x.reduce(concatenate));
 	return concatenated;
 }
 
@@ -35,10 +32,11 @@ export const getIndexesToConcatenate = (indexes) => {
 	let range = getRange(indexes.indexCount - (indexes.consecutiveCount-1)); // -2 because 1 for 0 indexing, 1 more to skip the last element
 	return range.map((el, ix) => {
 		let a = [];
-		for (let i = 0; i < indexes.consecutiveCount; i++) {
-			a.push(ix + i);
-		}
-		//[ix, ix + 1, ix + 2]);
+		let range = getRange(indexes.consecutiveCount);
+		range.map(i => a.push(ix + i), [])
+		// let reduced = [Number(range.reduce((acc, el) => acc + [ix + el], []))]
+		// console.log('reduced', reduced);
+		// return reduced;
 		return a;
 	}
 	)
