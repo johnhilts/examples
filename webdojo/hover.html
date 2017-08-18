@@ -1,0 +1,43 @@
+<html>
+	<head>
+		<title>Hover!</title>
+		<style type='text/css'>
+			.xButton {display: none;}
+			.c:hover .xButton {display: inline;}
+			#b:hover .xButton {display: block;}
+			.c:hover {background-color: green;}
+			#b:hover {background-color: blue;}
+			div.c {
+				background-color: red;
+			}
+			div#b {
+				background-color: yellow;
+			}
+			div {
+				width: 25%;
+				height: 25%;
+			}
+			#top-right {
+				position: absolute;
+				top: 0;
+				right: 0;
+			}
+
+		</style>
+	</head>
+	<body>
+		<div id='a' class='c'>
+			This is div A
+			<button id='d' class='top-right xButton'>X</button>
+		</div>
+		<div id='b'>
+			This is div B
+			<button class='top-right xButton'>X</button>
+		</div>
+		<div>
+			<button class='top-right xButton'>Y</button>
+		</div>
+	</body>
+</html>
+
+
