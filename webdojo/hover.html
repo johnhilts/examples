@@ -2,7 +2,7 @@
 	<head>
 		<title>Hover!</title>
 		<style type='text/css'>
-			.xButton {display: none;}
+			.xButton {display: none; border-radius: 50%; color: red; font-family: Arial; border-color: red; background-color:white;  }
 			.c:hover .xButton {display: inline;}
 			#b:hover .xButton {display: block;}
 			.c:hover {background-color: green;}
@@ -28,7 +28,11 @@
 	<body>
 		<div id='a' class='c'>
 			This is div A
-			<button id='d' class='top-right xButton'>X</button>
+			<span style="width=20px; height=20px;">
+				&nbsp;
+				<button id='d' class='top-right xButton'>X</button>
+				&nbsp;
+			</span>
 		</div>
 		<div id='b'>
 			This is div B
