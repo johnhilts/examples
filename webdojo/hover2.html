@@ -1,0 +1,31 @@
+<html>
+	<head>
+		<title>Hover 2!</title>
+		<style type='text/css'>
+			div {background-color: blue; width: 25%;}
+			.hoverButton {
+				display: none; 
+				border-radius: 50%; 
+				color: red; 
+				font-family: Arial; 
+				border-color: red; 
+				background-color:white;  
+				position: absolute;
+				top: 0;
+				right: 0;
+			}
+			.hoverContainer:hover .hoverButton {display: inline;}
+
+		</style>
+	</head>
+	<body>
+		<div class='hoverContainer' style="width: 25%; height: 25%;">
+			This is div A
+			<span style="width=20px; height=20px;">
+				<button class='hoverButton'>X</button>
+			</span>
+		</div>
+	</body>
+</html>
+
+

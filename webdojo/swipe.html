@@ -1,0 +1,53 @@
+<html>
+<head>
+<style>
+div {width: 25%; height: 25%;}
+</style>
+<body>
+<div>
+	<div id="div1">Line 1</div>
+	<div id="div2">Line 2</div>
+	<div id="div3">Line 3</div>
+	<div id="div4">Line 4</div>
+</div>
+<script>
+	var touchstartX = 0;
+	var touchstartY = 0;
+	var touchendX = 0;
+	var touchendY = 0;
+
+	var gesturedZone = document.getElementById('div2');
+
+	gesturedZone.addEventListener('touchstart', function(event) {
+	    touchstartX = event.changedTouches[0].screenX;
+	    touchstartY = event.changedTouches[0].screenY;
+	}, false);
+
+	gesturedZone.addEventListener('touchend', function(event) {
+	    touchendX = event.changedTouches[0].screenX;
+	    touchendY = event.changedTouches[0].screenY;
+	    handleGesture();
+	}, false); 
+
+	function handleGesture() {
+	    var swiped = 'swiped: ';
+	    if (touchendX < touchstartX) {
+		alert(swiped + 'left!');
+	    }
+	    if (touchendX > touchstartX) {
+		alert(swiped + 'right!');
+	    }
+	    if (touchendY < touchstartY) {
+		alert(swiped + 'down!');
+	    }
+	    if (touchendY > touchstartY) {
+		alert(swiped + 'up!');
+	    }
+	    if (touchendY == touchstartY) {
+		alert('tap!');
+	    }
+	}
+</script>
+</body>
+</html>
+
