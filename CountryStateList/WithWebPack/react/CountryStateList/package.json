@@ -5,8 +5,10 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "webpack-dev-server --inline --content-base . --history-api-fallback",
-    "production": "webpack -p"
+    "start": "webpack-dev-server  --config webpack.dev.js",
+    "build": "webpack -p --config webpack.prod.js",
+    "postbuild": "node cp-deploy.js",
+    "test": "jest --watch --coverage --config ./jest.config.json"
   },
   "repository": {
     "type": "git",
