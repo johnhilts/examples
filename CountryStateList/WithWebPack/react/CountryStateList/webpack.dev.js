@@ -7,12 +7,12 @@ module.exports = {
         './app/index.js'
     ],
     output: {
-        publicPath: 'http://localhost:7500/js/react/',
+        publicPath: 'http://localhost:7000/js/',
         filename: 'react-bundle.js'
     },
     devServer: {
         host: '0.0.0.0',
-        port: 7500,
+        port: 7000,
         hot: true,
         inline: true,
         headers: { 'Access-Control-Allow-Origin': '*' }
