@@ -73,6 +73,7 @@ Publish a message:
 PubSub.publish('COUNTRY_CHANGED', 'US')
 ```
 **How to use HMR with reactjs components in an MVC view**
+
 Simple description:
 1. Configure webpack to output the JS bundle to a designated spot, such as http://localhost:7000/js/react-bundle.js
 2. In the view, reference the bundle at that spot. Of course, that setting will need to be different per environment.
