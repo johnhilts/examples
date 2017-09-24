@@ -1,0 +1,38 @@
+{
+  "name": "CountryStateList",
+  "version": "1.0.0",
+  "description": "Integrate .NET and reactJS with WebPack",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "webpack-dev-server  --config webpack.dev.js",
+    "build": "webpack -p --config webpack.prod.js",
+    "postbuild": "node cp-deploy.js",
+    "test": "jest --watch --coverage --config ./jest.config.json"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/johnhilts/CountryStateList.git"
+  },
+  "author": "John Hilts <johnhilts@live.com> (http://countrystatelist.apphbr.com)",
+  "license": "ISC",
+  "dependencies": {
+    "react": "^0.14.7",
+    "react-dom": "^0.14.7"
+  },
+  "devDependencies": {
+    "axios": "^0.11.1",
+    "pubsub-js": "^1.5.6",
+    "babel-core": "^6.5.1",
+    "babel-loader": "^6.2.2",
+    "babel-preset-es2015": "^6.5.0",
+    "babel-preset-react": "^6.5.0",
+    "html-webpack-plugin": "^2.7.1",
+    "webpack": "^2.2.0",
+    "webpack-dev-server": "^2.2.0-rc.0"
+  },
+  "bugs": {
+    "url": "https://github.com/johnhilts/countrystatelist/issues"
+  },
+  "homepage": "https://github.com/johnhilts/countrystatelist#readme"
+}
