@@ -1,1 +1,1 @@
-export const config = {'apiDomain': 'http://127.0.0.10', }
+export const config = {'apiDomain': 'http://localhost:5000', }
