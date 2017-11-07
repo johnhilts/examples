@@ -1,0 +1,12 @@
+C:\Project\Personal\Thrash\ntest\test\ThingSpec\bin\Debug\netcoreapp2.0\ThingSpec.deps.json
+C:\Project\Personal\Thrash\ntest\test\ThingSpec\bin\Debug\netcoreapp2.0\ThingSpec.runtimeconfig.json
+C:\Project\Personal\Thrash\ntest\test\ThingSpec\bin\Debug\netcoreapp2.0\ThingSpec.runtimeconfig.dev.json
+C:\Project\Personal\Thrash\ntest\test\ThingSpec\bin\Debug\netcoreapp2.0\ThingSpec.dll
+C:\Project\Personal\Thrash\ntest\test\ThingSpec\bin\Debug\netcoreapp2.0\ThingSpec.pdb
+C:\Project\Personal\Thrash\ntest\test\ThingSpec\obj\Debug\netcoreapp2.0\ThingSpec.csproj.CoreCompileInputs.cache
+C:\Project\Personal\Thrash\ntest\test\ThingSpec\obj\Debug\netcoreapp2.0\ThingSpec.AssemblyInfoInputs.cache
+C:\Project\Personal\Thrash\ntest\test\ThingSpec\obj\Debug\netcoreapp2.0\ThingSpec.AssemblyInfo.cs
+C:\Project\Personal\Thrash\ntest\test\ThingSpec\obj\Debug\netcoreapp2.0\ThingSpec.dll
+C:\Project\Personal\Thrash\ntest\test\ThingSpec\obj\Debug\netcoreapp2.0\ThingSpec.pdb
+C:\Project\Personal\Thrash\ntest\test\ThingSpec\bin\Debug\netcoreapp2.0\Thing.dll
+C:\Project\Personal\Thrash\ntest\test\ThingSpec\bin\Debug\netcoreapp2.0\Thing.pdb

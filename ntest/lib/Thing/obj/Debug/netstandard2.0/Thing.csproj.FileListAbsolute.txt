@@ -1,0 +1,8 @@
+C:\Project\Personal\Thrash\ntest\lib\Thing\obj\Debug\netstandard2.0\Thing.csproj.CoreCompileInputs.cache
+C:\Project\Personal\Thrash\ntest\lib\Thing\obj\Debug\netstandard2.0\Thing.AssemblyInfoInputs.cache
+C:\Project\Personal\Thrash\ntest\lib\Thing\obj\Debug\netstandard2.0\Thing.AssemblyInfo.cs
+C:\Project\Personal\Thrash\ntest\lib\Thing\bin\Debug\netstandard2.0\Thing.deps.json
+C:\Project\Personal\Thrash\ntest\lib\Thing\bin\Debug\netstandard2.0\Thing.dll
+C:\Project\Personal\Thrash\ntest\lib\Thing\bin\Debug\netstandard2.0\Thing.pdb
+C:\Project\Personal\Thrash\ntest\lib\Thing\obj\Debug\netstandard2.0\Thing.dll
+C:\Project\Personal\Thrash\ntest\lib\Thing\obj\Debug\netstandard2.0\Thing.pdb
